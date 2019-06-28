@@ -2,6 +2,7 @@ import React from 'react';
 import Form from './components/search/Form';
 import GiphyList from './components/giphy-list/GiphyList';
 import Title from './components/title/Title';
+import Header from './components/header/header';
 
 import './App.css';
 
@@ -10,14 +11,13 @@ const API_KEY = "QnJhWIXwS59aPWO6hXi0rUIDNqEZ4mwj";
 class App extends React.Component{
 
 	state = {
-		giphyData: []
+		giphyData: [],
 	};
 
 	getGiphy = async (e) => {
 		const giphyName = e.target.elements.giphyName.value;
-		console.log(giphyName);
 		e.preventDefault();
-
+		// console.log(type);
 	// .replace(/\s/g, '+')
 
 		const api_call = await fetch(`http://api.giphy.com/v1/gifs/search?q=${giphyName}&api_key=${API_KEY}&limit=10`);
@@ -37,7 +37,7 @@ class App extends React.Component{
 		})
 	};
 
-	componentDidUpdate = () =>{
+	componentDidUpdate = () => {
 		const giphys = JSON.stringify(this.state.giphyData);
 		localStorage.setItem("giphys", giphys);
 	};
@@ -46,8 +46,11 @@ class App extends React.Component{
 		const {giphyData} = this.state;
 		return (
 			<div className="App">
+				<Header />
 				<Title title="Giphy Application" />
 				<Form getGiphy={this.getGiphy} />
+				{/*<button onClick={(event) => this.getGiphy(event, "gifs")} className="giphy_buttons">GIPHY</button>*/}
+				{/*<button onClick={(event) => this.getGiphy(event,"stickers")} className="giphy_buttons">STICKERS</button>*/}
 				<GiphyList giphyData={giphyData} />
 			</div>
 		);

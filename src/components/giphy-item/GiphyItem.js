@@ -42,6 +42,7 @@ class GiphyItem extends React.Component{
 						<button className="active-giphy__button">
 							<NavLink to="/">Go Home</NavLink>
 						</button>
+						<button className="active-giphy__button">Save</button>
 					</div>
 				}
 			</div>

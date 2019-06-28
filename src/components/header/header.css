@@ -1,0 +1,55 @@
+.container-fluid{
+	padding: 0;
+}
+.menu{
+	height: 80px;
+	background-color: black;
+	position: relative;
+}
+
+.logo_header{
+	width: 48px;
+	height: 48px;
+	background: #fff200;
+	color: #0000a0;
+	font-size: 15px;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 48px;
+	display: block;
+	transition: all 0.3s ease;
+	position: absolute;
+	top: 20%;
+	left: 15%;
+}
+
+.logo_header:hover{
+	background: #ffffff;
+	border-radius: 20px;
+}
+
+.header nav ul{
+	list-style-type: none;
+	padding-right: 50px;
+	margin: 0;
+}
+
+.header nav ul li{
+	display: inline-block;
+	margin-right: 50px;
+	padding-top: 20px;
+	color: #fff200;
+}
+
+.header nav ul li a{
+	text-decoration: none;
+
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.header nav ul li a:hover {
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+

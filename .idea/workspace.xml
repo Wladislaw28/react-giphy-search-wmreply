@@ -2,33 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6a27759-5ebe-4693-a917-5bfc90eb8d3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/button/Button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/button/Button.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/button/Sandbox.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/giphy-item/GiphyItem.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/giphy-item/GiphyItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/giphy-item/Modal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/giphy-item/Modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/giphy-item/Portal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/giphy-list/GiphyList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/giphy-list/GiphyList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icon/Icon.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icon/Icon.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icon/Sandbox.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search/Form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search/Form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/title/Title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/title/Title.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/save-giphy/Save.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/save-giphy/Save.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/giphy-item/GiphyItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/giphy-item/GiphyItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/giphy-list/GiphyList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/giphy-list/GiphyList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icon/Icon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icon/Icon.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icon/Sandbox.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,109 +29,57 @@
     <session id="-2066799571">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="15" />
-          <entry key="js" value="11" />
+          <entry key="css" value="17" />
+          <entry key="js" value="16" />
           <entry key="json" value="1" />
           <entry key="jsx" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="15" />
+          <entry key="CSS" value="17" />
           <entry key="JSON" value="1" />
           <entry key="JSX Harmony" value="1" />
-          <entry key="JavaScript" value="11" />
+          <entry key="JavaScript" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="1" />
+          <entry key="ESLintLanguageService" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="174" />
-          <entry key="js" value="2302" />
+          <entry key="css" value="233" />
+          <entry key="js" value="3055" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="174" />
-          <entry key="JavaScript" value="2302" />
+          <entry key="CSS" value="233" />
+          <entry key="JavaScript" value="3055" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+            <state relative-caret-position="23">
+              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/giphy-list/GiphyList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/giphy-list/GiphyList.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/giphy-item/GiphyItem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/App.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -163,10 +97,50 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/search/Form.css">
+        <entry file="file://$PROJECT_DIR$/src/components/giphy-item/GiphyItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+            <state relative-caret-position="46">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/giphy-list/GiphyList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1081">
+              <caret line="47" column="50" lean-forward="true" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#112#137#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/save-giphy/Save.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -183,17 +157,22 @@
         <option value="$PROJECT_DIR$/src/components/giphy-item/Portal.js" />
         <option value="$PROJECT_DIR$/src/components/giphy-item/Modal.css" />
         <option value="$PROJECT_DIR$/src/components/giphy-item/Modal.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/components/giphy-item/GiphyItem.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/components/giphy-list/GiphyList.css" />
-        <option value="$PROJECT_DIR$/src/components/giphy-list/GiphyList.js" />
         <option value="$PROJECT_DIR$/src/components/title/Title.js" />
         <option value="$PROJECT_DIR$/src/components/title/Title.css" />
         <option value="$PROJECT_DIR$/src/components/search/Form.js" />
         <option value="$PROJECT_DIR$/src/components/search/Form.css" />
         <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/components/header/header.js" />
+        <option value="$PROJECT_DIR$/src/components/header/header.css" />
+        <option value="$PROJECT_DIR$/src/components/AppStart.js" />
+        <option value="$PROJECT_DIR$/src/AppStart.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/components/giphy-item/GiphyItem.js" />
+        <option value="$PROJECT_DIR$/src/components/save-giphy/Save.js" />
+        <option value="$PROJECT_DIR$/src/components/giphy-list/GiphyList.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -223,6 +202,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,7 +240,14 @@
               <item name="wmreply-giphy-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="icon" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wmreply-giphy-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wmreply-giphy-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="save-giphy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wmreply-giphy-api" type="b2602c69:ProjectViewProjectNode" />
@@ -280,12 +267,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../react-model-api-hacher-news" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="C:\Users\User\Desktop\создание сайтов\wmreply\wmreply-giphy-api\node_modules\eslint" />
@@ -293,12 +279,13 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Desktop\создание сайтов\wmreply\wmreply-giphy-api\src\components" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\создание сайтов\wmreply\wmreply-giphy-api\src" />
       <recent name="C:\Users\User\Desktop\создание сайтов\wmreply\wmreply-giphy-api\src\components\search" />
       <recent name="C:\Users\User\Desktop\создание сайтов\wmreply\wmreply-giphy-api\src\components\giphy-list" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\создание сайтов\wmreply\wmreply-giphy-api\src\components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -323,25 +310,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561640167353</updated>
-      <workItem from="1561640169259" duration="28466000" />
+      <workItem from="1561640169259" duration="28601000" />
+      <workItem from="1561714842062" duration="16054000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28466000" />
+    <option name="totallyTimeSpent" value="44655000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="npm" side_tool="true" />
-      <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -349,6 +333,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -378,13 +366,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/icon/Icon.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/icon/Icon.css">
       <provider selected="true" editor-type-id="text-editor" />
@@ -409,36 +391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/giphy-item/GiphyItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -450,16 +402,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/giphy-list/GiphyList.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
@@ -470,20 +412,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/giphy-list/GiphyList.js">
+    <entry file="file://$PROJECT_DIR$/src/components/giphy-list/GiphyList.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/search/Form.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+        <state relative-caret-position="437">
+          <caret line="73" column="23" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -497,10 +429,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/search/Form.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
+        <state relative-caret-position="318">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/save-giphy/Save.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppStart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/header/header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="49" lean-forward="true" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/header/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/giphy-item/GiphyItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/save-giphy/Save.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/giphy-list/GiphyList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1081">
+          <caret line="47" column="50" lean-forward="true" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#112#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
