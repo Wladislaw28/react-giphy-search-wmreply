@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import './header.css';
 
 class Header extends React.Component{
@@ -15,7 +15,9 @@ class Header extends React.Component{
 							<nav className="d-flex flex-row-reverse">
 								<ul className="p-2 nav_header">
 									<li><NavLink exact to="/">Home</NavLink></li>
-									<li><NavLink to="/savegiphy">Save Giphy</NavLink></li>
+									<li>
+										<Link to="/savegiphy">Save</Link>
+									</li>
 								</ul>
 							</nav>
 						</div>

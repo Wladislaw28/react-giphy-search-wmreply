@@ -11,47 +11,57 @@ const API_KEY = "QnJhWIXwS59aPWO6hXi0rUIDNqEZ4mwj";
 class App extends React.Component{
 
 	state = {
-		giphyData: [],
+		imagesData: [],
+		valueText: ''
 	};
 
-	getGiphy = async (e) => {
-		const giphyName = e.target.elements.giphyName.value;
-		e.preventDefault();
-		// console.log(type);
+	getGiphy = async (type, valueTextUrl) => {
 	// .replace(/\s/g, '+')
-
-		const api_call = await fetch(`http://api.giphy.com/v1/gifs/search?q=${giphyName}&api_key=${API_KEY}&limit=10`);
+		const api_call = await fetch(`http://api.giphy.com/v1/${type}/search?q=${valueTextUrl}&api_key=${API_KEY}&limit=10`);
 
 		const data = await api_call.json();
 		this.setState ({
-			giphyData: data.data
+			imagesData: data.data
 		});
-		console.log(this.state.giphyData);
+		console.log(this.state.imagesData);
 	};
 
 	componentDidMount = () => {
 		const json = localStorage.getItem("giphys");
 		const giphys = JSON.parse(json);
 		this.setState({
-			giphyData: giphys
+			imagesData: giphys
 		})
 	};
 
 	componentDidUpdate = () => {
-		const giphys = JSON.stringify(this.state.giphyData);
+		const giphys = JSON.stringify(this.state.imagesData);
 		localStorage.setItem("giphys", giphys);
 	};
 
+	handleInputChange = ({ target: { value } }) => {
+		this.setState({
+			valueText: value,
+		})
+	};
+
 	render(){
-		const {giphyData} = this.state;
+		const {imagesData, valueText} = this.state;
 		return (
 			<div className="App">
 				<Header />
 				<Title title="Giphy Application" />
-				<Form getGiphy={this.getGiphy} />
-				{/*<button onClick={(event) => this.getGiphy(event, "gifs")} className="giphy_buttons">GIPHY</button>*/}
-				{/*<button onClick={(event) => this.getGiphy(event,"stickers")} className="giphy_buttons">STICKERS</button>*/}
-				<GiphyList giphyData={giphyData} />
+
+				<span className="input input--hoshi	">
+					<input className="input__field input__field--hoshi" type="text" onChange={this.handleInputChange} value={valueText}/>
+					<label className="input__label input__label--hoshi input__label--hoshi-color-1" htmlFor="input-4">
+					</label>
+				</span>
+
+				<button onClick={() => this.getGiphy("gifs", valueText)} className="giphy_buttons">GIPHY</button>
+				<button onClick={() => this.getGiphy("stickers", valueText)} className="giphy_buttons">STICKERS</button>
+
+				<GiphyList giphyData={imagesData} />
 			</div>
 		);
 	}
