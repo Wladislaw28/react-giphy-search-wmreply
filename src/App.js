@@ -17,7 +17,7 @@ class App extends React.Component{
 
 	getGiphy = async (type, valueTextUrl) => {
 	// .replace(/\s/g, '+')
-		const api_call = await fetch(`http://api.giphy.com/v1/${type}/search?q=${valueTextUrl}&api_key=${API_KEY}&limit=10`);
+		const api_call = await fetch(`http://api.giphy.com/v1/${type}/search?q=${valueTextUrl}&api_key=${API_KEY}`);
 
 		const data = await api_call.json();
 		this.setState ({
