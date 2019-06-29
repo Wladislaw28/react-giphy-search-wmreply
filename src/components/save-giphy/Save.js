@@ -2,15 +2,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Save.css'
 
-import ThemeContext from '../giphy-list/GiphyList';
-
 class Save extends React.Component{
 
 	state= {
 		urlGiph : []
 	};
-
-	static contextType = ThemeContext;
 
 	// componentDidMount = () => {
 	// 	const json = localStorage.getItem("url");
@@ -30,7 +26,6 @@ class Save extends React.Component{
 	render(){
 		// const url = this.props.location.state.giphDataGf;
 		// console.log(this.props);
-		console.log(this.context);
 		const {urlGiph} = this.state;
 		return(
 			<div>

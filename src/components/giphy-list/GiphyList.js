@@ -6,9 +6,6 @@ import Save from '../save-giphy/Save';
 import Lazyload from 'react-lazyload'
 
 
-export const ThemeContext = React.createContext([]);
-
-
 class GiphyList extends React.PureComponent{
 
 	state = {
@@ -28,12 +25,11 @@ class GiphyList extends React.PureComponent{
 		const {imagesData} = this.props;
 		const {dataImg} = this.state;
 		return(
-			<ThemeContext.Provider value={this.state.dataImg}>
 				<div className="grid">
 					{imagesData.map((image) => (
 						<Lazyload throttle={200} height={300}>
-							<div className="grid__item">
-								<div key={image.id}>
+							<div className="grid__item" key={image.id}>
+								<div>
 									<div className="grid__item-imgwrap">
 										<img className="grid__item-img grid__item-img--scaled" src={image.images.original.url} alt={image.title}/>
 									</div>
@@ -46,7 +42,9 @@ class GiphyList extends React.PureComponent{
 											<Link to={{
 												pathname: `/giphyitem/${image.id}`,
 												state: { giphTitle: image.title,
-													     giphOrSticker: image.is_sticker}
+													giphUrl: image.images.original.url,
+													giphSource: image.source,
+													giphUrlInGiphyCom: image.url}
 											}}>View Giphy</Link>
 										</button>
 
@@ -63,7 +61,6 @@ class GiphyList extends React.PureComponent{
 						</Lazyload>
 					))}
 				</div>
-			</ThemeContext.Provider>
 		);
 	}
 }

@@ -60,6 +60,7 @@ class App extends React.Component{
 				<button onClick={() => this.getGiphy("gifs", valueText)} className="giphy_buttons">GIPHY</button>
 				<button onClick={() => this.getGiphy("stickers", valueText)} className="giphy_buttons">STICKERS</button>
 
+				<h1 className="valueText_h1">{valueText}</h1>
 				<GiphyList imagesData={imagesData} />
 			</div>
 		);

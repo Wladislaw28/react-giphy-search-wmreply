@@ -23,6 +23,12 @@ button:focus {
 	font-size: 1.5em;
 }
 
+.valueText_h1{
+	position: fixed;
+	color: white;
+	margin-left: 40px;
+}
+
 .giphy_buttons {
 	border: solid 2px #fff700;
 	background: transparent;
@@ -112,7 +118,7 @@ input:-webkit-autofill {
 
 .active-giphy {
 	margin: 0 auto;
-	width: 60%;
+	width: 90%;
 }
 
 .active-giphy__img {
@@ -125,8 +131,16 @@ input:-webkit-autofill {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	margin: 1rem 0;
+	font-size: 40px;
+	color: white;
+}
+
+.active-giphy__title__similar{
+	text-transform: uppercase;
+	letter-spacing: 2px;
 	font-size: 50px;
 	color: white;
+	text-align: center;
 }
 
 .active-giphy__website {
@@ -150,6 +164,18 @@ input:-webkit-autofill {
 	padding: 0.2rem 0.9rem;
 	margin-right: 40px;
 	margin-top: 15px;
+	border-radius: 1px;
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: #e74c3c;
+}
+
+.active-giphy__button__giphyitem{
+	border: solid 2px #fff700;
+	background: transparent;
+	padding: 0.2rem 0.9rem;
+	position: fixed;
 	border-radius: 1px;
 	font-size: 1rem;
 	text-transform: uppercase;
