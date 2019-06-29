@@ -23,7 +23,6 @@ class App extends React.Component{
 		this.setState ({
 			imagesData: data.data
 		});
-		console.log(this.state.imagesData);
 	};
 
 	componentDidMount = () => {
@@ -61,7 +60,7 @@ class App extends React.Component{
 				<button onClick={() => this.getGiphy("gifs", valueText)} className="giphy_buttons">GIPHY</button>
 				<button onClick={() => this.getGiphy("stickers", valueText)} className="giphy_buttons">STICKERS</button>
 
-				<GiphyList giphyData={imagesData} />
+				<GiphyList imagesData={imagesData} />
 			</div>
 		);
 	}

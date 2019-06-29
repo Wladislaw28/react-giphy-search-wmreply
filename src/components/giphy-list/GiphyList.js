@@ -12,44 +12,45 @@ export const ThemeContext = React.createContext([]);
 class GiphyList extends React.PureComponent{
 
 	state = {
-		dataGf: []
+		dataImg: []
 	};
 
 
 	getDataId = (id) => {
-		const dataG = this.props.giphyData.filter((giph) => giph.id === id );
+		const dataI = this.props.imagesData.filter((image) => image.id === id );
 		this.setState({
-			dataGf: dataG
+			dataImg: dataI
 		})
 	};
 
 
 	render(){
-		const {giphyData} = this.props;
-		const {dataGf} = this.state;
+		const {imagesData} = this.props;
+		const {dataImg} = this.state;
 		return(
-			<ThemeContext.Provider value={this.state.dataGf}>
+			<ThemeContext.Provider value={this.state.dataImg}>
 				<div className="grid">
-					{giphyData.map((giph) => (
+					{imagesData.map((image) => (
 						<Lazyload throttle={200} height={300}>
 							<div className="grid__item">
-								<div key={giph.id}>
+								<div key={image.id}>
 									<div className="grid__item-imgwrap">
-										<img className="grid__item-img grid__item-img--scaled" src={giph.images.original.url} alt={giph.title}/>
+										<img className="grid__item-img grid__item-img--scaled" src={image.images.original.url} alt={image.title}/>
 									</div>
 									<div className="grid__item-content">
 										<h2 className="grid__item-title">
-											{giph.title.length < 20 ? `${giph.title}` : `${giph.title.substring(0,25)}...` }
+											{image.title.length < 20 ? `${image.title}` : `${image.title.substring(0,25)}...` }
 										</h2>
 
 										<button className="giphy_buttons">
 											<Link to={{
-												pathname: `/giphyitem/${giph.id}`,
-												state: { giphTitle: giph.title }
+												pathname: `/giphyitem/${image.id}`,
+												state: { giphTitle: image.title,
+													     giphOrSticker: image.is_sticker}
 											}}>View Giphy</Link>
 										</button>
 
-										<button onClick={() => this.getDataId(giph.id)} className="giphy_buttons">
+										<button onClick={() => this.getDataId(image.id)} className="giphy_buttons">
 											{/*<Link to={{*/}
 											{/*pathname: `/savegiphy`,*/}
 											{/*state: { giphDataGf: giph.images.original.url }*/}

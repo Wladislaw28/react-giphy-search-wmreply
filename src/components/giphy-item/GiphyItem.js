@@ -13,6 +13,7 @@ class GiphyItem extends React.Component{
 
 	componentDidMount = async () => {
 		const title = this.props.location.state.giphTitle;
+		const isSticker = this.props.location.state.giphOrSticker;
 		const gip = await fetch(`http://api.giphy.com/v1/gifs/search?q=${title}&api_key=${API_KEY}`);
 
 		const resp = await gip.json();
