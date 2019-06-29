@@ -45,7 +45,7 @@ class GiphyList extends React.PureComponent{
 													giphUrl: image.images.original.url,
 													giphSource: image.source,
 													giphUrlInGiphyCom: image.url}
-											}}>View Giphy</Link>
+											}}>View {image.is_sticker !== 1 ? 'Giphy' : 'Stick'}</Link>
 										</button>
 
 										<button onClick={() => this.getDataId(image.id)} className="giphy_buttons">
