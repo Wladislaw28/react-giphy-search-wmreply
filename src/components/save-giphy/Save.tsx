@@ -33,25 +33,22 @@ class Save extends React.Component<SaveProps,SaveState>{
 		saveImagesData : []
 	};
 
-	// componentDidMount = () => {
-	// 	const json = localStorage.getItem("url");
+    // componentDidMount = () => {
+    //     // @ts-ignore
+    //     const json: string  = localStorage.getItem("saveImages");
+    //     const saveImages = JSON.parse(json);
+    // };
     //
-	// 	this.setState(prevState  => ({
-	// 		urlGiph: [...prevState.urlGiph, json]
-	// 	}))
-	// };
-    //
-	// componentDidUpdate = () => {
-	// 		const saveimg = this.props.location.state.giphDataGf;
-	// 		localStorage.setItem("saveimg", saveimg);
-	// };
+    // componentDidUpdate = () => {
+    //     const saveImages = JSON.stringify(this.props.location.state.saveData);
+    //     localStorage.setItem("saveImages", saveImages);
+    // };
 
 	render(){
 		const saveImages = this.props.location.state.saveData;
 		const {saveImagesData} = this.state;
 		return(
 			<div>
-                {/*{console.log(this.props.location.state.saveData)}*/}
 				<button className="active-giphy__button">
 					<NavLink to="/">Go Home</NavLink>
 				</button>
