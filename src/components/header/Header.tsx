@@ -1,8 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import './header.css';
+import {ImagesData} from '../../App';
 
-class Header extends React.Component{
+interface HeaderProps {
+    dataImg: ImagesData[];
+}
+
+class Header extends React.Component<HeaderProps, {}>{
 	render(){
 		return(
 			<div className="header">
@@ -16,7 +21,10 @@ class Header extends React.Component{
 								<ul className="p-2 nav_header">
 									<li>
                                         <button className="active-giphy__button">
-                                            <Link to="/savegiphy">Save</Link>
+                                            <Link to={{
+                                                pathname: `/savegiphy`,
+                                                state: { saveData: this.props.dataImg }
+                                            }}>Save</Link>
                                         </button>
 									</li>
 								</ul>

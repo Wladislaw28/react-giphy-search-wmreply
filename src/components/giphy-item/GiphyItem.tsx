@@ -12,7 +12,7 @@ interface State{
     giphUrl: string;
 }
 
-interface Location{
+export interface Location{
     hash: string;
     key: string;
     pathname: string;
@@ -44,11 +44,9 @@ class GiphyItem extends React.Component<GiphyItemProps, GiphyItemState>{
 		this.setState({
 			activeGiphy: resp.data,
 		});
-		console.log(this.state.activeGiphy)
 	};
 
 	render(){
-		console.log(this.props);
 		const {activeGiphy} = this.state;
 		const giphUrlProps = this.props.location.state.giphUrl;
 		const titleProps = this.props.location.state.giphTitle;
@@ -58,7 +56,6 @@ class GiphyItem extends React.Component<GiphyItemProps, GiphyItemState>{
 				{
 					activeGiphy.length !== 0 &&
 					<div className="active-giphy">
-						{console.log(activeGiphy)}
 						<img className="active-giphy__img" src={giphUrlProps} alt={titleProps}/>
 						<h3 className="active-giphy__title">{titleProps}</h3>
 						<p className="active-giphy__website"> Source:

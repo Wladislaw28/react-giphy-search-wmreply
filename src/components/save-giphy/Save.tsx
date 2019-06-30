@@ -1,48 +1,78 @@
-import React from 'react';
+import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Save.css'
+import {ImagesData} from '../../App';
+import Lazyload from 'react-lazyload'
 
-class Save extends React.Component{
+interface State{
+    saveData: ImagesData[];
+}
+
+interface Location{
+    hash: string;
+    key: string;
+    pathname: string;
+    search: string;
+    state: State;
+}
+
+interface SaveProps {
+    dataImg: ImagesData[],
+    history: object;
+    match: object;
+    location: Location;
+}
+
+interface SaveState {
+    saveImagesData: ImagesData[],
+}
+
+class Save extends React.Component<SaveProps,SaveState>{
 
 	state= {
-		urlGiph : []
+		saveImagesData : []
 	};
 
 	// componentDidMount = () => {
 	// 	const json = localStorage.getItem("url");
-	//
+    //
 	// 	this.setState(prevState  => ({
 	// 		urlGiph: [...prevState.urlGiph, json]
 	// 	}))
 	// };
-	//
+    //
 	// componentDidUpdate = () => {
-	// 	if (this.props.location.state.giphDataGf !== '') {
-	// 		const url = this.props.location.state.giphDataGf;
-	// 		localStorage.setItem("url", url);
-	// 	}
+	// 		const saveimg = this.props.location.state.giphDataGf;
+	// 		localStorage.setItem("saveimg", saveimg);
 	// };
 
 	render(){
-		// const url = this.props.location.state.giphDataGf;
-		// console.log(this.props);
-		const {urlGiph} = this.state;
+		const saveImages = this.props.location.state.saveData;
+		const {saveImagesData} = this.state;
 		return(
 			<div>
+                {/*{console.log(this.props.location.state.saveData)}*/}
 				<button className="active-giphy__button">
 					<NavLink to="/">Go Home</NavLink>
 				</button>
-				{/*<div>*/}
-					{/*{this.props.location.state.giphDataGf === '' ?*/}
-						{/*console.log(null) :*/}
-						{/*urlGiph.map((giph) => (*/}
-								{/*<div key={new Date()}>*/}
-									{/*<img src={giph} alt=""/>*/}
-									{/*/!*{console.log(giph)}*!/*/}
-								{/*</div>*/}
-							{/*))*/}
-					{/*}*/}
-				{/*</div>*/}
+
+                <h3 className="active-giphy__title__similar">Save Images</h3>
+                    <div className="grid">
+                        {saveImages.map((image) => (
+							<Lazyload throttle={200} height={300} key={image.id}>
+                                <div className="grid__item" >
+                                    <div className="grid__item-imgwrap">
+                                        <img className="grid__item-img grid__item-img--scaled" src={image.images.original.url} alt={image.title}/>
+                                    </div>
+                                    <div className="grid__item-content">
+                                        <h2 className="grid__item-title">
+                                            {image.title.length < 20 ? `${image.title}` : `${image.title.substring(0,25)}...` }
+                                        </h2>
+                                    </div>
+                                </div>
+                            </Lazyload>
+                            ))}
+                    </div>
 			</div>
 		)
 	}

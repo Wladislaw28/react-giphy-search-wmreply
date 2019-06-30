@@ -46,13 +46,15 @@ export interface ImagesData {
 interface AppState {
     imagesData: ImagesData[];
     valueText: string;
+    dataImg: ImagesData[];
 }
 
 class App extends React.Component<{}, AppState>{
 
 	state = {
 		imagesData: [],
-		valueText: ''
+		valueText: '',
+        dataImg: []
 	};
 
 	getGiphy = async (type: string, valueTextUrl: string) => {
@@ -83,11 +85,17 @@ class App extends React.Component<{}, AppState>{
 		})
 	};
 
+    updateData(config: ImagesData[]) {
+        this.setState({
+            dataImg: config
+        });
+    };
+
 	render(){
 		const {imagesData, valueText} = this.state;
 		return (
 			<div className="App">
-				<Header />
+				<Header dataImg={this.state.dataImg} />
 				<Title title="Giphy Application" />
 
 				<span className="input input--hoshi	">
@@ -100,7 +108,7 @@ class App extends React.Component<{}, AppState>{
 				<button onClick={() => this.getGiphy("stickers", valueText)} className="giphy_buttons">STICKERS</button>
 
 				<h1 className="valueText_h1">{valueText}</h1>
-				<GiphyList imagesData={imagesData} />
+				<GiphyList updateData={this.updateData.bind(this)} imagesData={imagesData} />
 			</div>
 		);
 	}

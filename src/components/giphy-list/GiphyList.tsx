@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './GiphyList.css';
-import Save from '../save-giphy/Save';
 import Lazyload from 'react-lazyload'
 import {ImagesData} from '../../App';
 
 interface GiphyListProps {
     imagesData: ImagesData[];
+    updateData?: any;
 }
 
 interface GiphyListState {
@@ -24,7 +24,9 @@ class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
 		const dataI = this.props.imagesData.filter((image) => image.id === id );
 		this.setState({
 			dataImg: dataI
-		})
+		}, () => {
+            this.props.updateData(this.state.dataImg);
+        })
 	};
 
 
@@ -55,13 +57,7 @@ class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
 											}}>View {image.is_sticker !== 1 ? 'Giphy' : 'Stick'}</Link>
 										</button>
 
-										<button onClick={() => this.getDataId(image.id)} className="giphy_buttons">
-											{/*<Link to={{*/}
-											{/*pathname: `/savegiphy`,*/}
-											{/*state: { giphDataGf: giph.images.original.url }*/}
-											{/*}}></Link>*/}
-											Save
-										</button>
+										<button onClick={() => this.getDataId(image.id)} className="giphy_buttons">Save</button>
 									</div>
 								</div>
 							</div>
