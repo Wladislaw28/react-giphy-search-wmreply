@@ -14,9 +14,10 @@ class Header extends React.Component{
 						<div className="col-md-6 col-lg-9 d-none d-lg-block d-xl-block">
 							<nav className="d-flex flex-row-reverse">
 								<ul className="p-2 nav_header">
-									<li><NavLink exact to="/">Home</NavLink></li>
 									<li>
-										<Link to="/savegiphy">Save</Link>
+                                        <button className="active-giphy__button">
+                                            <Link to="/savegiphy">Save</Link>
+                                        </button>
 									</li>
 								</ul>
 							</nav>

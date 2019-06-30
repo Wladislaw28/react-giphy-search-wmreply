@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
@@ -16,6 +16,6 @@ ReactDOM.render((
 			<Route path="/savegiphy" component={Save} />
 		</Switch>
 	</BrowserRouter>
-), document.getElementById('root'));
+), document.getElementById('root') as HTMLElement );
 
 serviceWorker.unregister();

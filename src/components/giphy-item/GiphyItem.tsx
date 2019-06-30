@@ -1,11 +1,36 @@
-import React from 'react';
+import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import './GiphyItem.css';
-import Lazyload from 'react-lazyload'
+import GiphyList from '../giphy-list/GiphyList';
+import {ImagesData} from '../../App';
 
 const API_KEY = "QnJhWIXwS59aPWO6hXi0rUIDNqEZ4mwj";
 
-class GiphyItem extends React.Component{
+interface State{
+    giphSource: string;
+    giphTitle: string;
+    giphUrl: string;
+}
+
+interface Location{
+    hash: string;
+    key: string;
+    pathname: string;
+    search: string;
+    state: State;
+}
+
+interface GiphyItemProps {
+   history: object;
+   match: object;
+    location: Location;
+}
+
+interface GiphyItemState {
+    activeGiphy: ImagesData[];
+}
+
+class GiphyItem extends React.Component<GiphyItemProps, GiphyItemState>{
 
 	state = {
 		activeGiphy: [],
@@ -24,11 +49,10 @@ class GiphyItem extends React.Component{
 
 	render(){
 		console.log(this.props);
-		 const {activeGiphy} = this.state;
+		const {activeGiphy} = this.state;
 		const giphUrlProps = this.props.location.state.giphUrl;
 		const titleProps = this.props.location.state.giphTitle;
 		const sourceProps = this.props.location.state.giphSource;
-		const urlProps = this.props.location.state.giphUrlInGiphyCom;
 		return(
 			<div className="container-fluid">
 				{
@@ -46,25 +70,7 @@ class GiphyItem extends React.Component{
 
 
 						<h3 className="active-giphy__title__similar">Similar</h3>
-						<div className="grid">
-						{
-							activeGiphy.map((imageSim) => (
-								<Lazyload throttle={200} height={300}>
-									<div className="grid__item" key={imageSim.id}>
-										<div className="grid__item-imgwrap">
-											<img className="grid__item-img grid__item-img--scaled" src={imageSim.images.original.url}
-												 alt={imageSim.title}/>
-										</div>
-										<div className="grid__item-content">
-											<h2 className="grid__item-title">
-												{imageSim.title.length < 20 ? `${imageSim.title}` : `${imageSim.title.substring(0,25)}...` }
-											</h2>
-										</div>
-									</div>
-								</Lazyload>
-							))
-						}
-						</div>
+						<GiphyList imagesData={activeGiphy} />
 					</div>
 				}
 			</div>

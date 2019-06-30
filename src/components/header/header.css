@@ -8,24 +8,12 @@
 }
 
 .logo_header{
-	width: 48px;
-	height: 48px;
-	background: #fff200;
-	color: #0000a0;
-	font-size: 15px;
+	color: black;
+	font-size: 25px;
 	text-transform: uppercase;
-	text-align: center;
 	line-height: 48px;
-	display: block;
-	transition: all 0.3s ease;
-	position: absolute;
-	top: 20%;
-	left: 15%;
-}
-
-.logo_header:hover{
-	background: #ffffff;
-	border-radius: 20px;
+	top: 12%;
+	margin-top: 30px;
 }
 
 .header nav ul{
