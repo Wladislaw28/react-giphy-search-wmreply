@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import './GiphyItem.css';
 import GiphyList from '../giphy-list/GiphyList';
 import {ImagesData} from '../../App';
+import {API_KEY} from '../../constants';
 
-const API_KEY = "QnJhWIXwS59aPWO6hXi0rUIDNqEZ4mwj";
 
 interface State{
     giphSource: string;
@@ -67,7 +67,7 @@ class GiphyItem extends React.Component<GiphyItemProps, GiphyItemState>{
 
 
 						<h3 className="active-giphy__title__similar">Similar</h3>
-						<GiphyList imagesData={activeGiphy} />
+						<GiphyList isSimilar={true} imagesData={activeGiphy} />
 					</div>
 				}
 			</div>

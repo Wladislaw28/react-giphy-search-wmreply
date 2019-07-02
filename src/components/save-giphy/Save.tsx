@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Save.css'
 import {ImagesData} from '../../App';
-import Lazyload from 'react-lazyload'
+import GiphyList from '../giphy-list/GiphyList';
 
 interface State{
     saveData: ImagesData[];
@@ -30,7 +30,7 @@ interface SaveState {
 class Save extends React.Component<SaveProps,SaveState>{
 
 	state= {
-		saveImagesData : []
+		saveImagesData : this.props.location.state.saveData
 	};
 
     // componentDidMount = () => {
@@ -45,7 +45,7 @@ class Save extends React.Component<SaveProps,SaveState>{
     // };
 
 	render(){
-		const saveImages = this.props.location.state.saveData;
+		// const saveImages = this.props.location.state.saveData;
 		const {saveImagesData} = this.state;
 		return(
 			<div>
@@ -54,22 +54,23 @@ class Save extends React.Component<SaveProps,SaveState>{
 				</button>
 
                 <h3 className="active-giphy__title__similar">Save Images</h3>
-                    <div className="grid">
-                        {saveImages.map((image) => (
-							<Lazyload throttle={200} height={300} key={image.id}>
-                                <div className="grid__item" >
-                                    <div className="grid__item-imgwrap">
-                                        <img className="grid__item-img grid__item-img--scaled" src={image.images.original.url} alt={image.title}/>
-                                    </div>
-                                    <div className="grid__item-content">
-                                        <h2 className="grid__item-title">
-                                            {image.title.length < 20 ? `${image.title}` : `${image.title.substring(0,25)}...` }
-                                        </h2>
-                                    </div>
-                                </div>
-                            </Lazyload>
-                            ))}
-                    </div>
+                <GiphyList imagesData={saveImagesData} isSimilar={true} />
+                    {/*<div className="grid">*/}
+                        {/*{saveImages.map((image) => (*/}
+							{/*<Lazyload throttle={200} height={300} key={image.id}>*/}
+                                {/*<div className="grid__item" >*/}
+                                    {/*<div className="grid__item-imgwrap">*/}
+                                        {/*<img className="grid__item-img grid__item-img--scaled" src={image.images.original.url} alt={image.title}/>*/}
+                                    {/*</div>*/}
+                                    {/*<div className="grid__item-content">*/}
+                                        {/*<h2 className="grid__item-title">*/}
+                                            {/*{image.title.length < 20 ? `${image.title}` : `${image.title.substring(0,25)}...` }*/}
+                                        {/*</h2>*/}
+                                    {/*</div>*/}
+                                {/*</div>*/}
+                            {/*</Lazyload>*/}
+                            {/*))}*/}
+                    {/*</div>*/}
 			</div>
 		)
 	}

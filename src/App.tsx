@@ -2,10 +2,11 @@ import * as React from 'react';
 import GiphyList from './components/giphy-list/GiphyList';
 import Title from './components/title/Title';
 import Header from './components/header/Header';
+import {API_KEY} from './constants';
 
 import './App.css';
 
-const API_KEY = "QnJhWIXwS59aPWO6hXi0rUIDNqEZ4mwj";
+
 
 interface Original{
     url: string;
@@ -65,14 +66,22 @@ class App extends React.Component<{}, AppState>{
 		});
 	};
 
-	componentDidMount = () => {
-		// @ts-ignore
-        const json: string  = localStorage.getItem("giphys");
-		const giphys = JSON.parse(json);
-		this.setState({
-			imagesData: giphys
-		})
-	};
+    componentWillMount = () => {
+        this.getGiphy('gifs', 'rock');
+    };
+
+    getLocalStorage = () => {
+        const json: string | null  = localStorage.getItem("giphys");
+        // @ts-ignore
+        const giphys = JSON.parse(json);
+        this.setState({
+        		imagesData: giphys
+        })
+    };
+
+    componentDidMount = () => {
+        this.getLocalStorage();
+    };
 
 	componentDidUpdate = () => {
 		const giphys = JSON.stringify(this.state.imagesData);
@@ -108,7 +117,7 @@ class App extends React.Component<{}, AppState>{
 				<button onClick={() => this.getGiphy("stickers", valueText)} className="giphy_buttons">STICKERS</button>
 
 				<h1 className="valueText_h1">{valueText}</h1>
-				<GiphyList updateData={this.updateData.bind(this)} imagesData={imagesData} />
+				<GiphyList isSimilar={false} updateData={this.updateData.bind(this)} imagesData={imagesData} />
 			</div>
 		);
 	}

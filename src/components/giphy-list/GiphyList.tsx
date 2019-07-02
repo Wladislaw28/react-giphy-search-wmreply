@@ -7,7 +7,8 @@ import {ImagesData} from '../../App';
 interface GiphyListProps {
     imagesData: ImagesData[];
     updateData?: any;
-}
+    isSimilar: boolean;
+  }
 
 interface GiphyListState {
     dataImg: ImagesData[];
@@ -16,7 +17,7 @@ interface GiphyListState {
 class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
 
 	state = {
-		dataImg: []
+		dataImg: [],
 	};
 
 
@@ -31,8 +32,9 @@ class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
 
 
 	render(){
-		const {imagesData} = this.props;
+		const {imagesData, isSimilar} = this.props;
 		const {dataImg} = this.state;
+
 		return(
 				<div className="grid">
 					{imagesData.map((image) => (
@@ -46,18 +48,20 @@ class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
 										<h2 className="grid__item-title">
 											{image.title.length < 20 ? `${image.title}` : `${image.title.substring(0,25)}...` }
 										</h2>
+                                        {isSimilar === false ? <div>
+                                            <button className="giphy_buttons">
+                                                <Link to={{
+                                                    pathname: `/giphyitem/${image.id}`,
+                                                    state: { giphTitle: image.title,
+                                                        giphUrl: image.images.original.url,
+                                                        giphSource: image.source,
+                                                        giphUrlInGiphyCom: image.url}
+                                                }}>View {image.is_sticker !== 1 ? 'Giphy' : 'Stick'}</Link>
+                                            </button>
 
-										<button className="giphy_buttons">
-											<Link to={{
-												pathname: `/giphyitem/${image.id}`,
-												state: { giphTitle: image.title,
-													giphUrl: image.images.original.url,
-													giphSource: image.source,
-													giphUrlInGiphyCom: image.url}
-											}}>View {image.is_sticker !== 1 ? 'Giphy' : 'Stick'}</Link>
-										</button>
+                                            <button onClick={() => this.getDataId(image.id)} className="giphy_buttons">Save</button>
+                                        </div> : null}
 
-										<button onClick={() => this.getDataId(image.id)} className="giphy_buttons">Save</button>
 									</div>
 								</div>
 							</div>
