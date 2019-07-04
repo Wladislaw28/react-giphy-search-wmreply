@@ -67,7 +67,11 @@ class App extends React.Component<{}, AppState>{
 	};
 
     componentWillMount = () => {
-        this.getGiphy('gifs', 'rock');
+        if (localStorage.getItem("giphys") === null) {
+            this.getGiphy('gifs', 'trending');
+        } else {
+             this.getLocalStorage();
+        }
     };
 
     getLocalStorage = () => {
@@ -77,10 +81,6 @@ class App extends React.Component<{}, AppState>{
         this.setState({
         		imagesData: giphys
         })
-    };
-
-    componentDidMount = () => {
-        this.getLocalStorage();
     };
 
 	componentDidUpdate = () => {

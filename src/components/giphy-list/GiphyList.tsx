@@ -27,6 +27,8 @@ class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
 			dataImg: dataI
 		}, () => {
             this.props.updateData(this.state.dataImg);
+            const saveImg = JSON.stringify(dataI);
+            localStorage.setItem("saveImg", saveImg);
         })
 	};
 
