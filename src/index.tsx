@@ -3,17 +3,37 @@ import * as ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import App from './App';
-import GiphyItem from './components/giphy-item/GiphyItem';
-import Save from './components/save-giphy/Save';
+import Loadable from 'react-loadable';
+import Loading from './components/loader/Loading';
 import * as serviceWorker from './serviceWorker';
+
+const LoadableApp = Loadable({
+    loader: () => import(/* webpackChunkName: "giphy" */'./App'),
+    loading: Loading,
+    timeout: 15000,
+    delay: 500
+});
+
+const LoadableGiphyItem = Loadable({
+    loader: () => import(/* webpackChunkName: "giphyitem" */'./components/giphy-item/GiphyItem'),
+    loading: Loading,
+    timeout: 15000,
+    delay: 500
+});
+
+const LoadableSave = Loadable({
+    loader: () => import(/* webpackChunkName: "savegiphy" */'./components/save-giphy/Save'),
+    loading: Loading,
+    timeout: 15000,
+    delay: 500
+});
 
 ReactDOM.render((
 	<BrowserRouter>
 		<Switch>
-			<Route exact path="/" component={App}/>
-			<Route path="/giphyitem/:id" component={GiphyItem} />
-			<Route path="/savegiphy" component={Save} />
+			<Route exact path="/" component={LoadableApp}/>
+			<Route path="/giphyitem/:id" component={LoadableGiphyItem} />
+			<Route path="/savegiphy" component={LoadableSave} />
 		</Switch>
 	</BrowserRouter>
 ), document.getElementById('root') as HTMLElement );

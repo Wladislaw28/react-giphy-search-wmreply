@@ -2,33 +2,8 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import './GiphyItem.css';
 import GiphyList from '../giphy-list/GiphyList';
-import {ImagesData} from '../../App';
 import {API_KEY} from '../../constants';
-
-
-interface State{
-    giphSource: string;
-    giphTitle: string;
-    giphUrl: string;
-}
-
-export interface Location{
-    hash: string;
-    key: string;
-    pathname: string;
-    search: string;
-    state: State;
-}
-
-interface GiphyItemProps {
-   history: object;
-   match: object;
-    location: Location;
-}
-
-interface GiphyItemState {
-    activeGiphy: ImagesData[];
-}
+import {GiphyItemState, GiphyItemProps} from '../../interface';
 
 class GiphyItem extends React.Component<GiphyItemProps, GiphyItemState>{
 

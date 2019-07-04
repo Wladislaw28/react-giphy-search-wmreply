@@ -1,31 +1,10 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Save.css'
-import {ImagesData} from '../../App';
 import GiphyList from '../giphy-list/GiphyList';
+import {SaveState} from '../../interface';
+import {SaveProps} from '../../interface';
 
-interface State{
-    saveData: ImagesData[];
-}
-
-interface Location{
-    hash: string;
-    key: string;
-    pathname: string;
-    search: string;
-    state: State;
-}
-
-interface SaveProps {
-    dataImg: ImagesData[],
-    history: object;
-    match: object;
-    location: Location;
-}
-
-interface SaveState {
-    saveImagesData: ImagesData[],
-}
+import './Save.css'
 
 class Save extends React.Component<SaveProps,SaveState>{
 

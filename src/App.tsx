@@ -3,52 +3,10 @@ import GiphyList from './components/giphy-list/GiphyList';
 import Title from './components/title/Title';
 import Header from './components/header/Header';
 import {API_KEY} from './constants';
+import {ImagesData} from './interface';
+import {AppState} from './interface';
 
 import './App.css';
-
-
-
-interface Original{
-    url: string;
-    width: string;
-    height: string;
-    size: string;
-    frames: string;
-    mp4: string;
-    mp4_size: string;
-    webp: string;
-    webp_size: string;
-    hash?: string;
-}
-
-interface Images{
-    original: Original;
-    '480w_still': {
-        url: string;
-        width: string;
-        height: string;
-    };
-}
-
-export interface ImagesData {
-    type: string;
-    id: string;
-    url: string;
-    bitly_gif_url: string;
-    bitly_url: string;
-    username: string;
-    rating: string;
-    title: string;
-    is_sticker: number;
-    source: string;
-    images: Images
-}
-
-interface AppState {
-    imagesData: ImagesData[];
-    valueText: string;
-    dataImg: ImagesData[];
-}
 
 class App extends React.Component<{}, AppState>{
 
@@ -108,8 +66,10 @@ class App extends React.Component<{}, AppState>{
 				<Title title="Giphy Application" />
 
 				<span className="input input--hoshi	">
-					<input className="input__field input__field--hoshi" type="text" onChange={this.handleInputChange} value={valueText}/>
-					<label className="input__label input__label--hoshi input__label--hoshi-color-1" htmlFor="input-4">
+					<input className="input__field input__field--hoshi" type="text"
+                           onChange={this.handleInputChange} value={valueText}/>
+					<label className="input__label input__label--hoshi input__label--hoshi-color-1"
+                           htmlFor="input-4">
 					</label>
 				</span>
 

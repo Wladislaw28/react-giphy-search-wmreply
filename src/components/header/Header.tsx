@@ -1,11 +1,7 @@
 import * as React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import './header.css';
-import {ImagesData} from '../../App';
-
-interface HeaderProps {
-    dataImg: ImagesData[];
-}
+import {HeaderProps} from '../../interface'
 
 class Header extends React.Component<HeaderProps, {}>{
 	render(){
