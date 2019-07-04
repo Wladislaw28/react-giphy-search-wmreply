@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import GiphyList from '../giphy-list/GiphyList';
-import {SaveState} from '../../interface';
-import {SaveProps} from '../../interface';
+import {SaveState, SaveProps} from '../../interface';
 
 import './Save.css'
 

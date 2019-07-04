@@ -3,8 +3,7 @@ import GiphyList from './components/giphy-list/GiphyList';
 import Title from './components/title/Title';
 import Header from './components/header/Header';
 import {API_KEY} from './constants';
-import {ImagesData} from './interface';
-import {AppState} from './interface';
+import {ImagesData, AppState} from './interface';
 
 import './App.css';
 

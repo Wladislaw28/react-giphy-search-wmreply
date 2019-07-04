@@ -2,8 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './GiphyList.css';
 import Lazyload from 'react-lazyload'
-import {GiphyListState} from '../../interface'
-import {GiphyListProps} from '../../interface'
+import {GiphyListState, GiphyListProps} from '../../interface'
 
 class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
 
@@ -41,6 +40,7 @@ class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
 											{image.title.length < 20 ? `${image.title}` :
                                                 `${image.title.substring(0,25)}...` }
 										</h2>
+
                                         {isSimilar === false ? <div>
                                             <button className="giphy_buttons">
                                                 <Link to={{
@@ -56,6 +56,7 @@ class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
                                                     className="giphy_buttons">Save</button>
                                         </div>
                                             : null}
+
 									</div>
 								</div>
 							</div>
