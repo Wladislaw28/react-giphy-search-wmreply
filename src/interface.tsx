@@ -37,7 +37,6 @@ export interface ImagesData {
 export interface AppState {
     imagesData: ImagesData[];
     valueText: string;
-    dataImg: ImagesData[];
 }
 
 interface State{
@@ -53,7 +52,6 @@ interface Location{
 }
 
 export interface SaveProps {
-    dataImg: ImagesData[],
     history: object;
     match: object;
     location: Location;
@@ -63,13 +61,8 @@ export interface SaveState {
     saveImagesData: ImagesData[],
 }
 
-export interface GiphyListState {
-    dataImg: ImagesData[];
-}
-
 export interface GiphyListProps {
     imagesData: ImagesData[];
-    updateData?: any;
     isSimilar: boolean;
 }
 
@@ -95,8 +88,4 @@ export interface GiphyItemProps {
 
 export interface GiphyItemState {
     activeGiphy: ImagesData[];
-}
-
-export interface HeaderProps {
-    dataImg: ImagesData[];
 }

@@ -4,6 +4,8 @@ import './GiphyItem.css';
 import {API_KEY} from '../../constants';
 import {GiphyItemState, GiphyItemProps} from '../../interface';
 import Loading from '../loader/Loading';
+
+
 const GiphyList = lazy(() => import('../giphy-list/GiphyList'));
 
 

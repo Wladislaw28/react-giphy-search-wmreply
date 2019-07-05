@@ -7,7 +7,6 @@ import './Save.css'
 
 const GiphyList = lazy(() => import('../giphy-list/GiphyList'));
 
-
 class Save extends React.Component<SaveProps,SaveState>{
 
 	state = {
@@ -15,7 +14,7 @@ class Save extends React.Component<SaveProps,SaveState>{
 	};
 
     componentDidMount = () => {
-        const saveImages = JSON.parse(localStorage.getItem("gifs") || "[]");
+        const saveImages = JSON.parse(localStorage.getItem("gifsave") || "[]");
         this.setState({
             saveImagesData: saveImages
         });

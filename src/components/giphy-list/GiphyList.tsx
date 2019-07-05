@@ -2,35 +2,26 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './GiphyList.css';
 import Lazyload from 'react-lazyload'
-import {GiphyListState, GiphyListProps} from '../../interface'
+import {GiphyListProps} from '../../interface'
 
-class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
-
-	state = {
-		dataImg: [],
-	};
+class GiphyList extends React.PureComponent<GiphyListProps, {}>{
 
 	getDataId = (id: string) => {
 		const dataI = this.props.imagesData.filter((image) => image.id === id );
         const dataISave = dataI["0"];
-		this.setState({
-			dataImg: dataI
-		}, () => {
-            this.props.updateData(this.state.dataImg);
-            this.toLocStor(dataISave);
-        })
+        this.getLocalStorage(dataISave);
 	};
 
-    toLocStor = (dataISave : Object) => {
-        const saved = localStorage.getItem('gifs');
-        if (saved) {
-            const parseGiphs = JSON.parse(saved);
-            parseGiphs.push(dataISave);
-            localStorage.setItem("gifs", JSON.stringify(parseGiphs));
+    getLocalStorage = (dataISave : Object) => {
+        if (localStorage.getItem("gifsave") !== null) {
+            // @ts-ignore
+            const parseGiphy = JSON.parse(localStorage.getItem("gifsave"));
+            parseGiphy.push(dataISave);
+            localStorage.setItem("gifsave", JSON.stringify(parseGiphy));
         } else {
-            const gifs = new Array();
-            gifs.push(dataISave);
-            localStorage.setItem("gifs", JSON.stringify(gifs));
+            const gifsave = new Array();
+            gifsave.push(dataISave);
+            localStorage.setItem("gifsave", JSON.stringify(gifsave));
         }
     };
 

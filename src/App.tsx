@@ -12,7 +12,6 @@ class App extends React.Component<{}, AppState>{
 	state = {
 		imagesData: [],
 		valueText: '',
-        dataImg: []
 	};
 
 	getGiphy = async (type: string, valueTextUrl: string) => {
@@ -51,17 +50,11 @@ class App extends React.Component<{}, AppState>{
 		})
 	};
 
-    updateData(config: ImagesData[]) {
-        this.setState({
-            dataImg: config
-        });
-    };
-
-	render(){
+   	render(){
 		const {imagesData, valueText} = this.state;
 		return (
 			<div className="App">
-				<Header dataImg={this.state.dataImg} />
+				<Header />
 				<Title title="Giphy Application" />
 
 				<span className="input input--hoshi	">
@@ -76,7 +69,7 @@ class App extends React.Component<{}, AppState>{
 				<button onClick={() => this.getGiphy("stickers", valueText)} className="giphy_buttons">STICKERS</button>
 
 				<h1 className="valueText_h1">{valueText}</h1>
-				<GiphyList isSimilar={false} updateData={this.updateData.bind(this)} imagesData={imagesData} />
+				<GiphyList isSimilar={false} imagesData={imagesData} />
 			</div>
 		);
 	}
