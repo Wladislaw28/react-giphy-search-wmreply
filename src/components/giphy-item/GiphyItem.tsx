@@ -1,9 +1,11 @@
-import * as React from 'react';
+import  React,{ Suspense, lazy } from 'react';
 import { NavLink } from 'react-router-dom';
 import './GiphyItem.css';
-import GiphyList from '../giphy-list/GiphyList';
 import {API_KEY} from '../../constants';
 import {GiphyItemState, GiphyItemProps} from '../../interface';
+
+const GiphyList = lazy(() => import('../giphy-list/GiphyList'));
+
 
 class GiphyItem extends React.Component<GiphyItemProps, GiphyItemState>{
 
@@ -42,7 +44,9 @@ class GiphyItem extends React.Component<GiphyItemProps, GiphyItemState>{
 
 
 						<h3 className="active-giphy__title__similar">Similar</h3>
-						<GiphyList isSimilar={true} imagesData={activeGiphy} />
+						<Suspense fallback={'Loading...'}>
+							<GiphyList isSimilar={true} imagesData={activeGiphy} />
+						</Suspense>
 					</div>
 				}
 			</div>

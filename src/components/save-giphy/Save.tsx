@@ -1,9 +1,11 @@
-import * as React from 'react';
+import  React,{ Suspense, lazy } from 'react';
 import { NavLink } from 'react-router-dom';
-import GiphyList from '../giphy-list/GiphyList';
 import {SaveState, SaveProps} from '../../interface';
 
 import './Save.css'
+
+const GiphyList = lazy(() => import('../giphy-list/GiphyList'));
+
 
 class Save extends React.Component<SaveProps,SaveState>{
 
@@ -17,7 +19,6 @@ class Save extends React.Component<SaveProps,SaveState>{
             saveImagesData: saveImages
         })
     };
-
 
     // componentWillMount = () => {
     //     const saveState_json1 = JSON.parse(localStorage.getItem("saveImg") || "[]");
@@ -65,7 +66,9 @@ class Save extends React.Component<SaveProps,SaveState>{
                     <div>
                         <h3 className="active-giphy__title__similar">Save Images</h3>
                         {console.log(saveImagesData)}
-                        <GiphyList imagesData={saveImagesData} isSimilar={true} />
+                        <Suspense fallback={'Loading...'}>
+                            <GiphyList imagesData={saveImagesData} isSimilar={true} />
+                        </Suspense>
                     </div>
                     :  <h3 className="active-giphy__title__similar">No Save Images</h3>
                 }
