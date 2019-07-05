@@ -12,20 +12,30 @@ class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
 
 	getDataId = (id: string) => {
 		const dataI = this.props.imagesData.filter((image) => image.id === id );
+        const urlSaveGiphy = dataI["0"].images.original.url;
 		this.setState({
 			dataImg: dataI
 		}, () => {
             this.props.updateData(this.state.dataImg);
-            //метод 1 : сохранение отфильтр массива в LocalSt
-            const saveImg = JSON.stringify(dataI);
-            localStorage.setItem("saveImg", saveImg);
+            this.toLocStor(urlSaveGiphy);
         })
 	};
 
+    toLocStor = (urlSave : string) => {
+        const saved = localStorage.getItem('gifs');
+        if (saved) {
+            const parseGiphs = JSON.parse(saved);
+            parseGiphs.push(urlSave);
+            localStorage.setItem("gifs", JSON.stringify(parseGiphs));
+        } else {
+            const gifs = new Array();
+            gifs.push(urlSave);
+            localStorage.setItem("gifs", JSON.stringify(gifs));
+        }
+    };
+
 	render(){
 		const {imagesData, isSimilar} = this.props;
-		const {dataImg} = this.state;
-
 		return(
 				<div className="grid">
 					{imagesData.map((image) => (
@@ -57,7 +67,6 @@ class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
                                                     className="giphy_buttons">Save</button>
                                         </div>
                                             : null}
-
 									</div>
 								</div>
 							</div>
