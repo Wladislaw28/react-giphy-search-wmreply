@@ -1,6 +1,7 @@
 import  React,{ Suspense, lazy } from 'react';
 import { NavLink } from 'react-router-dom';
 import {SaveState, SaveProps} from '../../interface';
+import Loading from '../loader/Loading';
 
 import './Save.css'
 
@@ -59,7 +60,7 @@ class Save extends React.Component<SaveProps,SaveState>{
                     <div>
                         <h3 className="active-giphy__title__similar">Save Images</h3>
                         {console.log(saveImagesData)}
-                        <Suspense fallback={'Loading...'}>
+                        <Suspense fallback={<div><Loading /></div>}>
                             <GiphyList imagesData={saveImagesData} isSimilar={true} />
                         </Suspense>
                     </div>

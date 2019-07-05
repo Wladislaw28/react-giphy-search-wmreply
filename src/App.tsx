@@ -25,7 +25,7 @@ class App extends React.Component<{}, AppState>{
 
     componentWillMount = () => {
         if (localStorage.getItem("giphys") === null) {
-            this.getGiphy('gifs', 'trending');
+            this.getGiphy('gifs', 'typescript');
         } else {
              this.getLocalStorage();
         }

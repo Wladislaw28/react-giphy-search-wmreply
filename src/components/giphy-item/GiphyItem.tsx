@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './GiphyItem.css';
 import {API_KEY} from '../../constants';
 import {GiphyItemState, GiphyItemProps} from '../../interface';
-
+import Loading from '../loader/Loading';
 const GiphyList = lazy(() => import('../giphy-list/GiphyList'));
 
 
@@ -44,7 +44,7 @@ class GiphyItem extends React.Component<GiphyItemProps, GiphyItemState>{
 
 
 						<h3 className="active-giphy__title__similar">Similar</h3>
-						<Suspense fallback={'Loading...'}>
+						<Suspense fallback={<div><Loading /></div>}>
 							<GiphyList isSimilar={true} imagesData={activeGiphy} />
 						</Suspense>
 					</div>
