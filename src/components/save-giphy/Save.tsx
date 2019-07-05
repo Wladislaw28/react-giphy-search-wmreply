@@ -1,10 +1,12 @@
-import * as  React from 'react';
+import  React,{ Suspense, lazy } from 'react';
 import { NavLink } from 'react-router-dom';
 import {SaveState, SaveProps} from '../../interface';
 import Loading from '../loader/Loading';
-import Lazyload from 'react-lazyload'
 
-import '../giphy-list/GiphyList.css'
+import './Save.css'
+
+const GiphyList = lazy(() => import('../giphy-list/GiphyList'));
+
 
 class Save extends React.Component<SaveProps,SaveState>{
 
@@ -28,21 +30,10 @@ class Save extends React.Component<SaveProps,SaveState>{
 				</button>
                 {saveImagesData.length > 0 ?
                     <div>
-
                         <h3 className="active-giphy__title__similar">Save Images</h3>
-                        <div className="grid">
-                            {saveImagesData.map((item) => (
-                                <Lazyload throttle={200} height={300} key={item}>
-                                    <div className="grid__item" >
-                                        <div className="grid__item-imgwrap">
-                                            <img className="grid__item-img grid__item-img--scaled"
-                                                 src={item} alt={item}/>
-                                        </div>
-                                    </div>
-                                </Lazyload>
-                            ))}
-                        </div>
-
+                        <Suspense fallback={<div><Loading /></div>}>
+                            <GiphyList imagesData={saveImagesData} isSimilar={true} />
+                        </Suspense>
                     </div>
                     :  <h3 className="active-giphy__title__similar">No Save Images</h3>
                 }

@@ -12,24 +12,24 @@ class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
 
 	getDataId = (id: string) => {
 		const dataI = this.props.imagesData.filter((image) => image.id === id );
-        const urlSaveGiphy = dataI["0"].images.original.url;
+        const dataISave = dataI["0"];
 		this.setState({
 			dataImg: dataI
 		}, () => {
             this.props.updateData(this.state.dataImg);
-            this.toLocStor(urlSaveGiphy);
+            this.toLocStor(dataISave);
         })
 	};
 
-    toLocStor = (urlSave : string) => {
+    toLocStor = (dataISave : Object) => {
         const saved = localStorage.getItem('gifs');
         if (saved) {
             const parseGiphs = JSON.parse(saved);
-            parseGiphs.push(urlSave);
+            parseGiphs.push(dataISave);
             localStorage.setItem("gifs", JSON.stringify(parseGiphs));
         } else {
             const gifs = new Array();
-            gifs.push(urlSave);
+            gifs.push(dataISave);
             localStorage.setItem("gifs", JSON.stringify(gifs));
         }
     };
