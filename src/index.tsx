@@ -10,21 +10,21 @@ import * as serviceWorker from './serviceWorker';
 const LoadableApp = Loadable({
     loader: () => import(/* webpackChunkName: "giphy" */'./App'),
     loading: Loading,
-    timeout: 15000,
+    timeout: 10000,
     delay: 500
 });
 
 const LoadableGiphyItem = Loadable({
     loader: () => import(/* webpackChunkName: "giphyitem" */'./components/giphy-item/GiphyItem'),
     loading: Loading,
-    timeout: 15000,
+    timeout: 10000,
     delay: 500
 });
 
 const LoadableSave = Loadable({
     loader: () => import(/* webpackChunkName: "savegiphy" */'./components/save-giphy/Save'),
     loading: Loading,
-    timeout: 15000,
+    timeout: 10000,
     delay: 500
 });
 

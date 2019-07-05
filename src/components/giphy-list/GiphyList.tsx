@@ -16,6 +16,7 @@ class GiphyList extends React.PureComponent<GiphyListProps, GiphyListState>{
 			dataImg: dataI
 		}, () => {
             this.props.updateData(this.state.dataImg);
+            //метод 1 : сохранение отфильтр массива в LocalSt
             const saveImg = JSON.stringify(dataI);
             localStorage.setItem("saveImg", saveImg);
         })
