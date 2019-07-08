@@ -7,6 +7,8 @@
     "@types/react-dom": "^16.8.4",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
+    "fs": "0.0.1-security",
+    "incstr": "^1.2.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-lazyload": "^2.6.1",
@@ -38,7 +40,12 @@
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.7.0",
     "source-map-loader": "^0.2.4",
-    "typescript": "^3.5.2"
+    "style-loader": "^0.23.1",
+    "typescript": "^3.5.2",
+    "webpack-bundle-analyzer": "^3.3.2"
   }
 }

@@ -7,6 +7,7 @@ import {GiphyListProps} from '../../interface'
 class GiphyList extends React.PureComponent<GiphyListProps, {}>{
 
 	getDataId = (id: string) => {
+	    alert("You saved this image");
 		const dataI = this.props.imagesData.filter((image) => image.id === id );
         const dataISave = dataI["0"];
         this.getLocalStorage(dataISave);

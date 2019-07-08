@@ -1,3 +1,11 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+	.BundleAnalyzerPlugin;
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+
+const getScopedName = require('./getScopedName');
+const isDev = process.env.NODE_ENV === 'development';
+
 module.exports = {
 	entry: "src/index.ts",
 	output: {
@@ -21,9 +29,41 @@ module.exports = {
 
 	module: {
 		rules: [
-			// All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
 			{ test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+			{
+				test: /\.css$/,
+				use: [
+					(isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+					{
+						loader: 'css-loader',
+						options: {
+							modules: true,
+							...(isDev ? {
+								localIdentName: '[path]_[name]_[local]',
+							} : {
+								getLocalIdent: (context, localIdentName, localName) => (
+									getScopedName(localName, context.resourcePath)
+								),
+							}),
+						}
+					},
+				],
+			},
 		]
 	},
+	plugins: [
+		...(isDev ? [] : [
+			new MiniCssExtractPlugin({
+				filename: '[name].[contenthash].css',
+				chunkFilename: '[name].[contenthash].css',
+			}),
+		]),
+		new BundleAnalyzerPlugin({
+			analyzerMode: 'server',
+			generateStatsFile: true,
+			statsOptions: { source: false }
+		}),
+		new HtmlWebpackPlugin({ template: "public/index.html" }),
+	],
 
 };
