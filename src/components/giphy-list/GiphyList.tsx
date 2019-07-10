@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './GiphyList.css';
-import Lazyload from 'react-lazyload'
-import {GiphyListProps} from '../../interface'
+import Lazyload from 'react-lazyload';
+import {GiphyListProps} from '../../interface';
 
 class GiphyList extends React.PureComponent<GiphyListProps, {}>{
 
@@ -12,6 +12,13 @@ class GiphyList extends React.PureComponent<GiphyListProps, {}>{
         const dataISave = dataI["0"];
         this.getLocalStorage(dataISave);
 	};
+
+     getDataRemove = (id: string) => {
+        const saveImages = JSON.parse(localStorage.getItem("gifsave") || "[]");
+        const dataR = saveImages.filter((image) => image.id !== id );
+        localStorage.setItem("gifsave", JSON.stringify(dataR));
+         window.location.reload(true);
+    };
 
     getLocalStorage = (dataISave : Object) => {
         if (localStorage.getItem("gifsave") !== null) {
@@ -39,6 +46,7 @@ class GiphyList extends React.PureComponent<GiphyListProps, {}>{
                                              src={image.images.original.url} alt={image.title}/>
 									</div>
 									<div className="grid__item-content">
+
 										<h2 className="grid__item-title">
 											{image.title.length < 20 ? `${image.title}` :
                                                 `${image.title.substring(0,25)}...` }
@@ -58,7 +66,8 @@ class GiphyList extends React.PureComponent<GiphyListProps, {}>{
                                             <button onClick={() => this.getDataId(image.id)}
                                                     className="giphy_buttons">Save</button>
                                         </div>
-                                            : null}
+                                            : <button onClick={() => this.getDataRemove(image.id)}
+                                                      className="giphy_buttons">Delete</button>}
 									</div>
 								</div>
 							</div>
