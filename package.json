@@ -2,12 +2,14 @@
   "name": "wmreply-giphy-api",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://wladislaw28.github.io/react-giphy-search-wmreply",
   "dependencies": {
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "fs": "0.0.1-security",
+    "gh-pages": "^2.0.1",
     "incstr": "^1.2.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -21,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
